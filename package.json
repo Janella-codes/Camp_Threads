@@ -9,15 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.29.11",
+    "@clerk/themes": "^1.7.11",
     "@types/node": "20.12.4",
     "@types/react": "18.2.74",
     "@types/react-dom": "18.2.24",
+    "@uploadthing/react": "^6.4.1",
     "autoprefixer": "10.4.19",
+    "mongoose": "^8.3.0",
     "next": "14.1.4",
     "postcss": "8.4.38",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "svix": "^1.21.0",
     "tailwindcss": "3.4.3",
-    "typescript": "5.4.4"
+    "typescript": "5.4.4",
+    "uploadthing": "^6.7.0"
+  },
+  "devDependencies": {
+    "tailwindcss-animate": "^1.0.7"
   }
 }
