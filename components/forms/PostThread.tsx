@@ -1,3 +1,4 @@
+"use client";
 
 import { ThreadValidation } from "@/lib/validations/thread";
 import { useOrganization } from "@clerk/nextjs";
