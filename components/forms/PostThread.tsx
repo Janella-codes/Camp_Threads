@@ -1,4 +1,4 @@
-import { createThread } from "@/lib/actions/thread..actions";
+
 import { ThreadValidation } from "@/lib/validations/thread";
 import { useOrganization } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,6 +16,8 @@ import {
   } from "@/components/ui/form";
   import { Textarea } from "@/components/ui/textarea";
     import { Button } from "@/components/ui/button";
+import { createThread } from "@/lib/actions/thread.actions";
+
 
 
 
