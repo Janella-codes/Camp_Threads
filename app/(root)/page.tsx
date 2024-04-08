@@ -7,7 +7,7 @@ console.log(`Next.js version: ${version}`);
 export default function Home() {
   return (
     <>
-        <h1 className="head-test text-left">Home</h1>
+        <h1 className="text-cyan-200 head-text text-left">Home</h1>
     </>
   )
 }
