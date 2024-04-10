@@ -13,7 +13,7 @@ async function Page() {
     if (!user) return null; // to avoid typescript warnings
 
     const userInfo = await fetchUser(user.id);
-    if(userInfo?.Onboarded) redirect("/");
+    if(userInfo?.onboarded) redirect("/");
    
 
     const userData = {
