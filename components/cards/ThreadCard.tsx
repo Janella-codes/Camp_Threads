@@ -11,6 +11,13 @@ interface Props {
         name: string;
         image: string;
         id: string;
+     
+    childItem: {
+        id: string;
+        name: string;
+        image: string;
+        createdAt: string;
+    }
     }
     community: {
         id: string;
@@ -20,8 +27,20 @@ interface Props {
     createdAt: string;
     comments: {
         author: {
+            id: string;
             image: string;
+            name: string;
+            createdAt: string;
         }
+    comments: {
+        createdAt: string;
+        id: string;
+        author: {
+            id: string;
+            name: string;
+            image: string;
+            }
+        }   
     }[]
     isComment?: boolean;
 }
@@ -97,6 +116,7 @@ const ThreadCard = ({
                             {isComment && comments.length > 0 && (
                                 <Link href={`/thread/${id}`}>
                                 <p className='mt-1 text-subtle-medium text-gray-1'>
+                                {formatDateString(createdAt)}
                                     {comments.length} repl{comments.length > 1 ? "ies" : "y"}
                                 </p>
                                 </Link>
@@ -124,6 +144,39 @@ const ThreadCard = ({
                         />
                     </Link>
                 )}
+
+                    {!isComment && comments.length > 0 && (
+                                <Link href={`/thread/${id}`} className="mt-5 flex items-center">
+                               <p className="text-subtle-medium text-light-1">
+                        
+                         {" "} - {author.name} commented on this
+                        </p>
+                        <Image
+                            src={author.image}
+                            alt={author.name}
+                            width={20}
+                            height={20}
+                            className="cursor-pointer object-contain"
+                        />
+                                </Link>
+                            )}
+
+            {/*{!isComment && comments.length > 0 && (
+                    <Link href={`/thread/${author.childItem.id}`} className="mt-5 flex items-center">
+                        <p className="text-subtle-medium text-light-1">
+                            {formatDateString(createdAt)}
+                         {" "} - {author.childItem.name} commented on this
+                        </p>
+                        <Image
+                            src={author.childItem.image}
+                            alt={author.childItem.name}
+                            width={20}
+                            height={20}
+                            className="cursor-pointer object-contain"
+                        />
+                    </Link>
+                )} */}
+          
     </article>
     );
 }
